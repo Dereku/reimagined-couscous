@@ -15,6 +15,8 @@ public class ReimaginedCouscous {
         ReimaginedCouscous rc = new ReimaginedCouscous();
         final File configLocation = new File(rc.whereIsMyWorkDir(), "configuration.json");
         final Configuration configuration = rc.loadConfig(configLocation);
+        System.out.println("Should be created: " + configuration.isShouldBeCreated());
+        configuration.getMappy().forEach((s, integers) -> System.out.println(s + ": " + integers));
         rc.saveConfig(configuration, configLocation);
     }
 
